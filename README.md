@@ -7,12 +7,10 @@
 ## 3) 2 route-table - public rt & private rt
 ## 4) 1 Internet-gatway and attach to public-rt
 ## 5) 1 Nat-gatway and attach to private-rt
-## 6) 1 internet-facing-load-balancer
-## 7) 1 internal-load-balancer ( not facing internet )
 
 # Create Resources in EC2 AWS
-## 1) 1 Internet-facing Load-Balancer (application)
-## 2) 1 Internal-facing Load-Balancer (application)
+## 1) 1 Internet-facing Load-Balancer (application) ( facing internet )
+## 2) 1 Internal-facing Load-Balancer (application) ( not facing internet )
 ## 3) 2 target group ( internal-load-balancer-tg && internet-load-balancer-tg)
 ## 4) 5 Surity-groups ( Internet-LB,Internal-LB,Template-Web-Server,Template-App-Server,RDS-Instance-sg)
 ## 5) 1 Template-Web-Server (for Auto Scaling Group - Web)
