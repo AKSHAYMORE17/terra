@@ -1,0 +1,56 @@
+- name: webserver-play
+  hosts: webserver
+  become: yes
+  tasks:
+     - name: install ngixn webserver
+       yum:
+         name: nginx
+         state: present
+     - name: start ngixn
+       service:
+          name: nginx
+          state: started
+     - name: restared nginx
+       service:
+          name: nginx
+          state: restarted
+     - name: enable nginx
+       service:
+          name: nginx
+          enabled: yes
+- name: appserver-play
+  hosts: appserver
+  become: yes
+  tasks:
+     - name: install all software in appserver
+       yum:
+         name: "{{ item }}"
+         state: present
+       with_items:
+            - nginx
+            - php
+            - mariadb105-server
+     - name: start all software
+       service:
+           name: "{{item}}"
+           state: started
+       with_items:
+              - nginx
+              - php-fpm
+              - mariadb
+     - name: restarted all software
+       service:
+           name: "{{item}}"
+           state: restarted
+       with_items:
+              - nginx
+              - php-fpm
+              - mariadb
+     - name: enable all software
+       service:
+           name: "{{item}}"
+           enabled: yes
+       with_items:
+              - nginx
+              - php-fpm
+              - mariadb
