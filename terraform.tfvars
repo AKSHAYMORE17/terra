@@ -1,6 +1,6 @@
 region     = "us-east-1"
-access_key = "put your access key here"
-secret_key = "put here in your own secret key"
+access_key = "AKIAXPQ5Z3G6UM4RMJHW"
+secret_key = "MeH77PbAF/ngBSPCAlyUx35cO+FxnvmIsXQgiulN"
 
 # network Module Values
 vpc_cidr_block             = "10.10.0.0/16"
